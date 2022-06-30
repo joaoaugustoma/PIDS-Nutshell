@@ -1,0 +1,20 @@
+<div class="container">
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <mat-icon>more_vert</mat-icon>Menu
+  </button>
+
+  <mat-menu #menu="matMenu" >
+    <button mat-menu-item>
+      <a mat-flat-button [routerLink]="['/']" id="nav-title"><mat-icon>home</mat-icon>Nutshell</a>
+    </button>
+    <button mat-menu-item>
+      <a mat-flat-button color="primary" [routerLink]="['cliente']"><mat-icon>person</mat-icon>Clientes</a>
+    </button>
+  </mat-menu>
+
+  <h1>Bem Vindo!</h1>
+
+  <router-outlet></router-outlet>
+</div>
+
+

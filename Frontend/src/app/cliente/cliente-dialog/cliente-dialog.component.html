@@ -1,0 +1,45 @@
+<h1 mat-dialog-title> Adicionar Cliente</h1>
+<div mat-dialog-content>
+  <form [formGroup]="clienteForm">
+    <mat-form-field appearance="legacy">
+      <mat-label>CPF</mat-label>
+      <input matInput placeholder="Somente números" formControlName="cpf" type="number" required  [readonly]="acao == 'alterado'">
+      <mat-icon matSuffix>face</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+      <mat-label>Nome</mat-label>
+      <input matInput placeholder="Primeiro Nome" formControlName="primeiroNome" required>
+      <mat-icon matSuffix>person</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+      <mat-label>Sobrenome</mat-label>
+      <input matInput placeholder="Sobrenome" formControlName="sobreNome" required>
+      <mat-icon matSuffix>person</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+      <mat-label>Data de Nascimento</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="dataNascimento" required >
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+      <mat-label>Telefone</mat-label>
+      <input matInput placeholder="Somente números" formControlName="telefone" type="number" required>
+      <mat-icon matSuffix>phone</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+      <mat-label>Endereço</mat-label>
+      <input matInput placeholder="Rua/Av, Qd, Lt, Num" formControlName="endereco" required>
+      <mat-icon matSuffix>pin_drop</mat-icon>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+  <button mat-flat-button color="warn" mat-dialog-close>Cancelar</button>
+  <button mat-flat-button color="primary" (click)="adicionarCliente()">Salvar</button>
+</div>

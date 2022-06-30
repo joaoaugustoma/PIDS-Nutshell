@@ -1,0 +1,12 @@
+<h1 mat-dialog-title> Remover Cliente?</h1>
+<ul>
+  <li>Deseja remover o cliente: {{ cliente.primeiroNome }} {{ cliente.sobreNome }}</li>
+  <li>CPF: {{ cliente.cpf }}</li>
+  <li>Data de Nasciento: {{ cliente.dataNascimento | date: 'dd/MM/yyyy'}}</li>
+  <li>Telefone: {{ cliente.telefone }}</li>
+  <li>Endereço: {{ cliente.endereco }}</li>
+</ul>
+<div mat-dialog-actions [align]="'center'">
+  <button mat-flat-button color="warn" (click)="confirmarRemocao(cliente)">Sim</button>
+  <button mat-flat-button color="primary" mat-dialog-close>Não</button>
+</div>
